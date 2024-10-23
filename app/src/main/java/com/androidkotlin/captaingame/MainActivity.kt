@@ -52,32 +52,6 @@ class MainActivity : ComponentActivity() {
             Text(text = "Current Direction : ${direction.value}")
             Text(text = "${stormOrTreasure.value}")
             Text(text = "${pirates.value}")
-            Spacer(modifier = Modifier.height(30.dp))
-            Row {
-                Button(onClick = {
-                    direction.value = "East"
-                    if (Random.nextBoolean()){
-                        treasuresFound.value += 1
-                        stormOrTreasure.value = "WE FOUND A TREASURE !!!"
-                    } else {
-                        stormOrTreasure.value = "STORM AHEAD !!!"
-                    }
-                }) {
-                    Text("Sail East")
-                }
-                Spacer(modifier = Modifier.width(20.dp))
-                Button(onClick = {
-                    direction.value = "West"
-                    if (Random.nextBoolean()){
-                        treasuresFound.value += 1
-                        stormOrTreasure.value = "WE FOUND A TREASURE !!!"
-                    } else {
-                        stormOrTreasure.value = "STORM AHEAD !!!"
-                    }
-                }) {
-                    Text("Sail West")
-                }
-            }
             Spacer(modifier = Modifier.height(20.dp))
             Row {
                 Button(onClick = {
@@ -91,7 +65,35 @@ class MainActivity : ComponentActivity() {
                 }) {
                     Text("Sail North")
                 }
-                Spacer(modifier = Modifier.width(20.dp))
+            }
+            Spacer(modifier = Modifier.height(20.dp))
+            Row {
+                Button(onClick = {
+                    direction.value = "West"
+                    if (Random.nextBoolean()){
+                        treasuresFound.value += 1
+                        stormOrTreasure.value = "WE FOUND A TREASURE !!!"
+                    } else {
+                        stormOrTreasure.value = "STORM AHEAD !!!"
+                    }
+                }) {
+                    Text("Sail West")
+                }
+                Spacer(modifier = Modifier.width(50.dp))
+                Button(onClick = {
+                    direction.value = "East"
+                    if (Random.nextBoolean()){
+                        treasuresFound.value += 1
+                        stormOrTreasure.value = "WE FOUND A TREASURE !!!"
+                    } else {
+                        stormOrTreasure.value = "STORM AHEAD !!!"
+                    }
+                }) {
+                    Text("Sail East")
+                }
+            }
+            Spacer(modifier = Modifier.height(20.dp))
+            Row {
                 Button(onClick = {
                     direction.value = "South"
                     if (Random.nextBoolean()){
